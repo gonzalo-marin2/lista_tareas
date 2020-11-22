@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contenedor {
+    width: 900px;
+    background-color: black;
+    border: solid black 2px;
+    margin: 0 auto;
+}
+
+.datos {
+    background-color: lightgreen;
+    padding: 10px;
+    border: solid black 2px;
+}
+
+.filtros {
+    background-color: lightgreen;
+    padding: 10px;
+    border: solid black 2px;
+}
+
+.tareas {
+    background-color: lightgreen;
+    padding: 10px;
+    border: solid black 2px;
+}
+
+.titulo {
+    background-color: black;
+    color: white;
+    padding: 10px;
+}

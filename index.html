@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Lista de Tareas</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/datos.js"></script>
+</head>
+
+<body>
+    <div class="contenedor">
+        <div class="datos">
+            <form class="formulario" action="">
+                <input type="text" id="tarea" placeholder="Introduce la tarea a guardar">
+                <select id="prioridad">
+                    <option value="-1" selected>Elige una prioridad</option>
+                    <option value="diaria">diaria</option>
+                    <option value="mensual">mensual</option>
+                    <option value="urgente">URGENTE</option>
+                </select>
+                <input type="submit" value="Guardar" id="btnGuardar">
+            </form>
+        </div>
+        <div class="filtros">
+            <form action="" class="formulario">
+                <select id="buscarPrioridad">
+                    <option value="-1" selected>Elige una prioridad</option>
+                    <option value="diaria">diaria</option>
+                    <option value="mensual">mensual</option>
+                    <option value="urgente">URGENTE</option>
+                </select>
+                <input type="text" id="buscarTarea" placeholder="Introduce la tarea a buscar">
+            </form>
+        </div>
+        <div class="tareas">
+            <ul>
+                <!-- <li>Tarea</li><input type="submit" value="Eliminar" id="btnEliminar"> -->
+            </ul>
+        </div>
+        <div class="titulo">
+            <h3>App Tareas</h3>
+        </div>
+
+    </div>
+    <script src="js/funciones.js"></script>
+    <script src="js/eventos.js"></script>
+</body>
+
+</html>
