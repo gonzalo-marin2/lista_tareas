@@ -1,3 +1,4 @@
+//Con esta función recogemos los datos del formulario
 function recogerDatos(event) {
     event.preventDefault();
     /* console.log(nuevaTarea.value);
@@ -17,20 +18,22 @@ function recogerDatos(event) {
     prioridad.value = "";
 }
 
-function guardarTarea(pNuevaTarea, pPrioridad) {
+//Guardamos en el array los datos que anteriormente hemos recogido
+function guardarTarea(pNuevaTarea) {
     let tarea = {
         id: id,
-        nombre: pNuevaTarea,
-        prioridad: pPrioridad
+        nombre: pNuevaTarea
+        //prioridad: pPrioridad
     }
 
+    //evitamos guardar tareas que ya están guardadas
     let tareaRepetida = arrTareas.findIndex(tarea => {
         return tarea.nombre == pNuevaTarea /* && tarea.prioridad == pPrioridad */
     })
 
     if (tareaRepetida == -1) {
         arrTareas.push(tarea);
-        mostrarTarea(pNuevaTarea, pPrioridad, seccion);
+        mostrarTarea(tarea, seccion);
         id++;
         console.log(arrTareas);
     } else {
@@ -38,10 +41,11 @@ function guardarTarea(pNuevaTarea, pPrioridad) {
     }
 }
 
-function mostrarTarea(pNuevaTarea, pPrioridad, pSeccion) {
-    console.log(pSeccion);
+//Pintamos la nueva tarea que hemos guardado en el array
+function mostrarTarea(pNuevaTarea, pSeccion) {
+    //console.log(pSeccion);
     let li = document.createElement('li');
-    let contenidoli = document.createTextNode(`${pNuevaTarea}: ${pPrioridad} `);
+    let contenidoli = document.createTextNode(`${pNuevaTarea}:  ${prioridad}`);
     li.appendChild(contenidoli);
 
     let a = document.createElement('a');
@@ -54,6 +58,7 @@ function mostrarTarea(pNuevaTarea, pPrioridad, pSeccion) {
     pSeccion.appendChild(li);
 }
 
+//Pintamos todas las tareas del array
 function mostrarTareas(pArrTareas, pSeccion) {
     //numeroTareas.innerText = pArrTareas.length;
     if (pArrTareas.length != 0) {
@@ -81,6 +86,7 @@ function eliminarTarea(event) {
     console.log(arrTareas);
 }
 
+//Filtramos por prioridad, es decir, buscamos las tareas que tengan una misma prioridad
 function filtrarPorPrioridad(pArrTareas, pPrioridad) {
     console.log(pArrTareas, pPrioridad);
     const resultado = pArrTareas.filter(tarea => tarea.prioridad.toLowerCase() == pPrioridad.toLowerCase());
@@ -88,6 +94,7 @@ function filtrarPorPrioridad(pArrTareas, pPrioridad) {
     return resultado;
 }
 
+//Filtramos las tareas por palabras
 function filtrarTareaPorPalabra(pArrTareas, pPalabraBuscada) {
     const listaFiltrada = pArrTareas.filter(tarea => {
         let tareaCompleta = tarea.nombre + " " + tarea.prioridad;
