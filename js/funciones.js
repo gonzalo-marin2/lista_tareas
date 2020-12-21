@@ -19,11 +19,11 @@ function recogerDatos(event) {
 }
 
 //Guardamos en el array los datos que anteriormente hemos recogido
-function guardarTarea(pNuevaTarea) {
+function guardarTarea(pNuevaTarea, pPrioridad) {
     let tarea = {
         id: id,
-        nombre: pNuevaTarea
-        //prioridad: pPrioridad
+        nombre: pNuevaTarea,
+        prioridad: pPrioridad
     }
 
     //evitamos guardar tareas que ya están guardadas
@@ -45,7 +45,7 @@ function guardarTarea(pNuevaTarea) {
 function mostrarTarea(pNuevaTarea, pSeccion) {
     //console.log(pSeccion);
     let li = document.createElement('li');
-    let contenidoli = document.createTextNode(`${pNuevaTarea}:  ${prioridad}`);
+    let contenidoli = document.createTextNode(`${pNuevaTarea.nombre}:  ${pNuevaTarea.prioridad}`);
     li.appendChild(contenidoli);
 
     let a = document.createElement('a');
@@ -64,7 +64,7 @@ function mostrarTareas(pArrTareas, pSeccion) {
     if (pArrTareas.length != 0) {
         pSeccion.innerHTML = "";
         pArrTareas.forEach(tarea => {
-            mostrarTarea(tarea, prioridad, pSeccion);
+            mostrarTarea(tarea, pSeccion);
         })
     } else {
         pSeccion.innerHTML = '<h3>No hay tareas que cumplan con su búsqueda</h3>'

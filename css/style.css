@@ -29,6 +29,12 @@
     border: solid black 2px;
 }
 
+.tareas a {
+    text-decoration: none;
+    background-color: darkred;
+    color: white;
+}
+
 .titulo {
     background-color: black;
     color: white;
