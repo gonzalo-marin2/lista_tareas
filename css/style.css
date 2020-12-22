@@ -29,10 +29,23 @@
     border: solid black 2px;
 }
 
+.tareas li {
+    padding: 10px;
+    background-color: lightgray;
+    margin-bottom: 5px;
+}
+
+.rojo {
+    background-color: red;
+}
+
 .tareas a {
     text-decoration: none;
     background-color: darkred;
     color: white;
+    float: right;
+    padding: 5px;
+    margin: -5px 10px;
 }
 
 .titulo {

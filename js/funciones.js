@@ -56,6 +56,11 @@ function mostrarTarea(pNuevaTarea, pSeccion) {
 
     li.appendChild(a);
     pSeccion.appendChild(li);
+
+    let prioridadTarea = prioridad.value;
+    if (prioridadTarea == "urgente") {
+        li.classList.add("rojo");
+    }
 }
 
 //Pintamos todas las tareas del array
