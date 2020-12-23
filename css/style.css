@@ -31,8 +31,11 @@
 
 .tareas li {
     padding: 10px;
-    background-color: lightgray;
     margin-bottom: 5px;
+}
+
+.normal {
+    background-color: lightgray;
 }
 
 .rojo {
@@ -41,7 +44,7 @@
 
 .tareas a {
     text-decoration: none;
-    background-color: darkred;
+    background-color: tomato;
     color: white;
     float: right;
     padding: 5px;

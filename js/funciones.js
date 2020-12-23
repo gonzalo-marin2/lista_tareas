@@ -57,10 +57,16 @@ function mostrarTarea(pNuevaTarea, pSeccion) {
     li.appendChild(a);
     pSeccion.appendChild(li);
 
+    /* Intento mostrar las tareas marcadas como urgentes en rojo mediante el cambio de clase con classList. La clase normal tiene un fondo gris(style.css línea 38)
+    En style.css he creado una clase rojo con fondo rojo(línea 41) */
+
     let prioridadTarea = prioridad.value;
-    if (prioridadTarea == "urgente") {
-        li.classList.add("rojo");
+    if (prioridadTarea != "urgente") {
+        li.classList.add('normal');
+    } else {
+        li.classList.add('rojo');
     }
+
 }
 
 //Pintamos todas las tareas del array
